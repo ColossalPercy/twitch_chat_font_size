@@ -10,6 +10,10 @@
       ]
     }
   ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "description": "Use the plus and minus to change the font size in twitch chat.",
   "icons": {
     "128": "icon128.png",
@@ -19,7 +23,7 @@
   "manifest_version": 2,
   "name": "Twitch Chat Font Size",
   "permissions": [
-    "*://*.twitch.tv/*"
+    "*://*.twitch.tv/*", "tabs"
   ],
-  "version": "1.2"
+  "version": "1.3"
 }
