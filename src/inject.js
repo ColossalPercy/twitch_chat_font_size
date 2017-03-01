@@ -1,6 +1,11 @@
-//check to see if twitch buttons have loaded
 var count = 0;
+var setSize = 13.3333;
+main();
 function main(){
+	chrome.storage.sync.get("tcfs_size", function(result) {
+		setSize = result.tcfs_size;
+	});
+
 	var buttonExists = setInterval(function(){
 		if ($('#increaseFont').length) {
 			clearInterval(buttonExists);
@@ -15,14 +20,14 @@ function main(){
 				var style = document.createElement("style");
 				style.id = "change-chat-styles";
 				document.head.appendChild(style);
-				var node = document.createTextNode(".message,.from,.colon,.chat_text_input{font-size: 12px;}");
+				var node = document.createTextNode(".message,.from,.colon,.chat_text_input{font-size: " + setSize + "px;}");
 				style.appendChild(node);//add style tag to head to change font size
 			}
 			clearInterval(buttonExists);//stop checking
 			document.getElementById('increaseFont').addEventListener('click',increaseFont);
 			document.getElementById('decreaseFont').addEventListener('click',decreaseFont);
 		} else if (count < 30) {//limit checking to 150 (15secs)
-			console.log("nope");
+			console.log("Could not load Twitch Chat Font Size.");
 		} else {
 			clearInterval(buttonExists);//stop checking
 		}
@@ -31,18 +36,19 @@ function main(){
 }
 
 //button functionality
-var size = 12;
 function increaseFont(){
-	if (size < 20){
-		size = size + 2;
-		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input{font-size: " + size + "px;)";
+	if (setSize < 20){
+		setSize = setSize + 2;
+		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input{font-size: " + setSize + "px;)";
+		chrome.storage.sync.set({"tcfs_size": setSize});
 	}
 }
 
 function decreaseFont(){
-	if (size > 12){
-		size = size - 2;
-		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input{font-size: " + size + "px;)";
+	if (setSize > 12){
+		setSize = setSize - 2;
+		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input{font-size: " + setSize + "px;)";
+		chrome.storage.sync.set({"tcfs_size": setSize});
 	}
 }
 

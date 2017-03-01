@@ -23,7 +23,7 @@
   "manifest_version": 2,
   "name": "Twitch Chat Font Size",
   "permissions": [
-    "*://*.twitch.tv/*", "tabs"
+    "*://*.twitch.tv/*", "tabs", "storage"
   ],
-  "version": "1.4"
+  "version": "1.5"
 }
