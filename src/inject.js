@@ -1,10 +1,20 @@
 var count = 0;
-var setSize = 13.3333;
+//chrome.storage.sync.clear();
+var setSize;
+
 main();
 function main(){
 	chrome.storage.sync.get("tcfs_size", function(result) {
 		setSize = result.tcfs_size;
+		console.log(setSize);
+		if (typeof setSize === "undefined") {
+			setSize = 13.3333;
+			console.log("no size stored.")
+		} else {
+			console.log("loaded size as " + setSize);
+		}
 	});
+
 
 	var buttonExists = setInterval(function(){
 		if ($('#increaseFont').length) {

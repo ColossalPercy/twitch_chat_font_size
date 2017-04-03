@@ -25,5 +25,5 @@
   "permissions": [
     "*://*.twitch.tv/*", "tabs", "storage"
   ],
-  "version": "1.5"
+  "version": "1.5.1"
 }
