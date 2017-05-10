@@ -30,7 +30,7 @@ function main(){
 				var style = document.createElement("style");
 				style.id = "change-chat-styles";
 				document.head.appendChild(style);
-				var node = document.createTextNode(".message,.from,.colon,.chat_text_input{font-size: " + setSize + "px;}");
+				var node = document.createTextNode(".message,.from,.colon,.chat_text_input,textarea.form__input{font-size: " + setSize + "px;}");
 				style.appendChild(node);//add style tag to head to change font size
 			}
 			clearInterval(buttonExists);//stop checking
@@ -49,7 +49,7 @@ function main(){
 function increaseFont(){
 	if (setSize < 20){
 		setSize = setSize + 2;
-		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input{font-size: " + setSize + "px;)";
+		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input,textarea.form__input{font-size: " + setSize + "px;)";
 		chrome.storage.sync.set({"tcfs_size": setSize});
 	}
 }
@@ -57,7 +57,7 @@ function increaseFont(){
 function decreaseFont(){
 	if (setSize > 12){
 		setSize = setSize - 2;
-		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input{font-size: " + setSize + "px;)";
+		document.getElementById('change-chat-styles').innerHTML = ".message,.from,.colon,.chat_text_input,textarea.form__input{font-size: " + setSize + "px;)";
 		chrome.storage.sync.set({"tcfs_size": setSize});
 	}
 }
