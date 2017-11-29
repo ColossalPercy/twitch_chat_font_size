@@ -3,19 +3,13 @@
     {
       "js": [
         "jQuery.js",
-        "inject-legacy.js",
-        "inject-beta.js",
-        "inject.js"
+        "inject-beta.js"
       ],
       "matches": [
         "*://*.twitch.tv/*"
       ]
     }
   ],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "description": "Use the plus and minus to change the font size in twitch chat.",
   "icons": {
     "128": "icon128.png",
@@ -27,5 +21,5 @@
   "permissions": [
     "*://*.twitch.tv/*", "tabs", "storage"
   ],
-  "version": "2.0"
+  "version": "2.1"
 }

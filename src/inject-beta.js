@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-function betaSite() {
+// function betaSite() {
     var setSize;
     var loaded;
     var config = {
@@ -43,7 +43,7 @@ function betaSite() {
 
     var buttonsLoaded = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-            var chatSelector = $('.chat-buttons-container');
+            var chatSelector = $('.chat-input__buttons-container');
             if (chatSelector.length > 0) {
                 buttonsLoaded.disconnect();
                 loaded = true;
@@ -67,9 +67,9 @@ function betaSite() {
     });
 
     function addButton() {
-        $('.chat-buttons-container > div').append(htmlStrucP);
+        $('.chat-input__buttons-container > div').append(htmlStrucP);
         document.getElementById('increaseFont').addEventListener('click', increaseFont);
-        $('.chat-buttons-container > div').append(htmlStrucM);
+        $('.chat-input__buttons-container > div').append(htmlStrucM);
         document.getElementById('decreaseFont').addEventListener('click', decreaseFont);
         $('.chat-list').css('font-size', setSize);
     }
@@ -93,4 +93,4 @@ function betaSite() {
             });
         }
     }
-}
+// }
