@@ -78,7 +78,11 @@ class TwitchChatFontSize extends Loader {
         }
 
         // update our hand dandy tooltip so the peeps know what size they are on
-        document.querySelector('#tcfs-tooltip').innerHTML = 'Font Size: ' + this.size + 'px';
+        let tooltip = 'Font Size: ' + this.size + 'px';
+        if (this.size == 13) {
+            tooltip += ' (Default)';
+        }
+        document.querySelector('#tcfs-tooltip').innerHTML = tooltip;
 
         // initialise the elements we want to add our size to
         let resizers = {};

@@ -18,7 +18,8 @@
   "manifest_version": 2,
   "name": "Twitch Chat Font Size",
   "permissions": [
-    "*://*.twitch.tv/*"
+    "*://*.twitch.tv/*",
+    "*://*.rawgit.com/*"
   ],
-  "version": "3.0.0"
+  "version": "3.0.1"
 }

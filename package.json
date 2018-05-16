@@ -1,6 +1,6 @@
 {
     "name": "twitch_chat_font_size",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Chrome extension that changes the size of the twitch.tv chat.",
     "main": "index.js",
     "scripts": {
