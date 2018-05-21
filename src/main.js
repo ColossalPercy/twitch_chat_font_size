@@ -3,9 +3,14 @@
 // Copyright (c) 2018 ColossalPercy
 // Licensed under MIT license
 // *****************************************************************************
-import { buttons } from './components';
+import {
+    buttons
+} from './components';
 import Loader from './loader';
-import { insert, createElement } from './utils/dom';
+import {
+    insert,
+    createElement
+} from './utils/dom';
 
 const DIRECTION = {
     increase: +2,

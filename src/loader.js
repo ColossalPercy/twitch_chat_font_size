@@ -26,6 +26,8 @@ export default class Loader {
 
     // find out what type of twitch page we are on
     // TODO: collections page - similar to VOD
+    // TODO: popout chat
+    // TODO: closing popout chat
     checkURL() {
         // parse URL
         let path = window.location.pathname;
