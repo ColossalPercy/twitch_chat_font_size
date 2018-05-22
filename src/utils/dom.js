@@ -7,15 +7,15 @@
  * @param {string} html the HTML string to insert
  */
 export function insert(parent, pos, html) {
-    parent.insertAdjacentHTML(positions[pos], html);
+	parent.insertAdjacentHTML(positions[pos], html);
 }
 
 // translations of shorthand positions
 const positions = {
-    bb: 'beforebegin',
-    ab: 'afterbegin',
-    be: 'beforeend',
-    ae: 'afterend'
+	bb: 'beforebegin',
+	ab: 'afterbegin',
+	be: 'beforeend',
+	ae: 'afterend'
 };
 
 // *****************************************************************************
@@ -27,16 +27,16 @@ const positions = {
  * @returns {element}
  */
 export function createElement(tag, attr) {
-    // create the element with tag
-    let el = document.createElement(tag);
+	// create the element with tag
+	let el = document.createElement(tag);
 
-    // loop through all attributes we want to set
-    for (let key in attr) {
-        let prop = attr[key];
-        // if (attr[key] instanceof Array) {
-        //     prop = attr[key].join(' ');
-        // }
-        el[key] = prop;
-    }
-    return el;
+	// loop through all attributes we want to set
+	for (let key in attr) {
+		let prop = attr[key];
+		// if (attr[key] instanceof Array) {
+		//     prop = attr[key].join(' ');
+		// }
+		el[key] = prop;
+	}
+	return el;
 }
